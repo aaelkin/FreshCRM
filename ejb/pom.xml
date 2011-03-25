@@ -43,6 +43,12 @@
             <artifactId>jboss-ejb3-api</artifactId>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+        </dependency>
+
 	</dependencies>
 
 </project>
