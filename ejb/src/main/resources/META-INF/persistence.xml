@@ -3,8 +3,8 @@
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
              version="2.0">
     <persistence-unit name="manager" transaction-type="JTA">
-        <provider>javax.persistence.spi.PersistenceProvider</provider>
-        <jta-data-source>java:fresh-crm-ds</jta-data-source>
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <jta-data-source>java:/fresh-crm-ds</jta-data-source>
         <class>ru.smartbrains.freshcrm.domain.Simple</class>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
