@@ -6,6 +6,7 @@ import ru.smartbrains.freshcrm.domain.Simple;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author a.elkin
@@ -21,11 +22,17 @@ public class SimpleService implements Serializable {
 
 	public String getHello() {
 		StringBuffer buffer = new StringBuffer();
-		buffer.append("| id | name |\n");
-		for (Simple simple : simpleDAO.getSimpleList()) {
-			buffer.append("|").append(simple.getId()).append(" | ").append(simple.getName()).append("\n");
-		}
-
+		printList(buffer, simpleDAO.getSimpleList());
+		buffer.append("<br/>");
+		buffer.append("<br/>");
+		printList(buffer, simpleDAO.getSimpleListWithJDBC());
 		return "Hello world!\n" + buffer.toString();
+	}
+
+	private void printList(StringBuffer buffer, List<Simple> list) {
+		buffer.append("| id | name |<br/>");
+		for (Simple simple : list) {
+			buffer.append("|").append(simple.getId()).append(" | ").append(simple.getName()).append("<br/>");
+		}
 	}
 }

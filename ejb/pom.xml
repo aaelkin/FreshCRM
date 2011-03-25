@@ -59,6 +59,11 @@
 			<artifactId>hibernate-entitymanager</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+		</dependency>
+
 	</dependencies>
 
 </project>
