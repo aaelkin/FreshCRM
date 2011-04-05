@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition
+		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:h="http://java.sun.com/jsf/html"
+		template="/WEB-INF/templates/empty.xhtml">
+
+	<ui:define name="content">
+		<h:form>
+			<h:inputHidden value="#{metaEntityController.entity.id}"/>
+
+			<h:panelGrid columns="2">
+				<h:outputLabel for="entityName" value="Наименование сущности:"/>
+				<h:inputText id="entityName" value="#{metaEntityController.entity.name}"/>
+
+				<h:outputLabel for="entityTableName" value="Наименование сущности:"/>
+				<h:inputText id="entityTableName" value="#{metaEntityController.entity.tableName}"/>
+			</h:panelGrid>
+
+			<h:commandButton action="#{metaEntityController.save}" value="Создать"
+							 rendered="#{metaEntityController.entity.id eq null}"/>
+			<h:commandButton action="#{metaEntityController.save}" value="Сохранить"
+							 rendered="#{metaEntityController.entity.id ne null}"/>
+		</h:form>
+
+	</ui:define>
+</ui:composition>

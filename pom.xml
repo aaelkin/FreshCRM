@@ -7,100 +7,132 @@
 	<groupId>ru.smart-brains</groupId>
 	<artifactId>FreshCRM</artifactId>
 	<version>0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
-
-	<modules>
-		<module>ejb</module>
-		<module>war</module>
-		<module>ear</module>
-	</modules>
+	<packaging>war</packaging>
 
 	<properties>
 		<project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
 		<web-client.context-root>/FreshCRM</web-client.context-root>
-		<web-client.ear.name>FreshCRM.${project.version}</web-client.ear.name>
+		<web-client.war.name>FreshCRM</web-client.war.name>
 	</properties>
+	<dependencies>
 
-	<dependencyManagement>
-		<dependencies>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-web-api</artifactId>
+			<version>6.0</version>
+			<scope>provided</scope>
+		</dependency>
 
-			<dependency>
-				<groupId>javax</groupId>
-				<artifactId>javaee-web-api</artifactId>
-				<version>6.0</version>
-			</dependency>
+		<dependency>
+			<groupId>javax.enterprise</groupId>
+			<artifactId>cdi-api</artifactId>
+			<version>1.0-SP1</version>
+			<scope>provided</scope>
+		</dependency>
 
-			<dependency>
-				<groupId>javax.enterprise</groupId>
-				<artifactId>cdi-api</artifactId>
-				<version>1.0-SP1</version>
-			</dependency>
+		<dependency>
+			<groupId>org.jboss.ejb3</groupId>
+			<artifactId>jboss-ejb3-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
 
-			<dependency>
-				<groupId>org.jboss.ejb3</groupId>
-				<artifactId>jboss-ejb3-api</artifactId>
-				<version>3.1.0</version>
-			</dependency>
+		<!--<dependency>-->
+		<!--<groupId>org.jboss.seam.solder</groupId>-->
+		<!--<artifactId>seam-solder-tooling</artifactId>-->
+		<!--<version>3.0.0.Final</version>-->
+		<!--</dependency>-->
 
-			<dependency>
-				<groupId>org.jboss.seam.solder</groupId>
-				<artifactId>seam-solder</artifactId>
-				<version>3.0.0.CR1</version>
-			</dependency>
+		<dependency>
+			<groupId>org.jboss.seam.international</groupId>
+			<artifactId>seam-international</artifactId>
+			<version>3.0.0.Final</version>
+		</dependency>
 
-			<dependency>
-				<groupId>org.jboss.seam.persistence</groupId>
-				<artifactId>seam-persistence</artifactId>
-				<version>3.0.0.CR1</version>
-			</dependency>
+		<dependency>
+			<groupId>org.jboss.seam.security</groupId>
+			<artifactId>seam-security</artifactId>
+			<version>3.0.0.Final</version>
+		</dependency>
 
-			<dependency>
-				<groupId>org.jboss.seam.config</groupId>
-				<artifactId>seam-config-xml</artifactId>
-				<version>3.0.0.CR1</version>
-			</dependency>
+		<dependency>
+			<groupId>org.jboss.seam.solder</groupId>
+			<artifactId>seam-solder</artifactId>
+			<version>3.0.0.Final</version>
+		</dependency>
 
-			<dependency>
-				<groupId>org.hibernate</groupId>
-				<artifactId>hibernate-core</artifactId>
-				<version>3.6.0.Final</version>
-				<scope>provided</scope>
-			</dependency>
+		<dependency>
+			<groupId>org.jboss.seam.servlet</groupId>
+			<artifactId>seam-servlet</artifactId>
+			<version>3.0.0.Final</version>
+		</dependency>
 
-			<dependency>
-				<groupId>org.hibernate</groupId>
-				<artifactId>hibernate-entitymanager</artifactId>
-				<version>3.6.0.Final</version>
-				<scope>provided</scope>
-			</dependency>
+		<dependency>
+			<groupId>org.jboss.seam.config</groupId>
+			<artifactId>seam-config-xml</artifactId>
+			<version>3.0.0.Final</version>
+		</dependency>
 
-			<dependency>
-				<groupId>javax.faces</groupId>
-				<artifactId>jsf-api</artifactId>
-				<version>2.0.2-FCS</version>
-			</dependency>
+		<dependency>
+			<groupId>org.jboss.seam.persistence</groupId>
+			<artifactId>seam-persistence</artifactId>
+			<version>3.0.0.Final</version>
+		</dependency>
 
-			<dependency>
-				<groupId>org.primefaces</groupId>
-				<artifactId>primefaces</artifactId>
-				<version>2.2.1</version>
-			</dependency>
+		<dependency>
+			<groupId>org.jboss.seam.catch</groupId>
+			<artifactId>seam-catch</artifactId>
+			<version>3.0.0.Final</version>
+		</dependency>
 
-			<dependency>
-				<groupId>org.jboss.logging</groupId>
-				<artifactId>jboss-logging</artifactId>
-				<version>3.0.0.Beta4</version>
-			</dependency>
 
-			<dependency>
-				<groupId>postgresql</groupId>
-				<artifactId>postgresql</artifactId>
-				<version>9.0-801.jdbc4</version>
-				<scope>provided</scope>
-			</dependency>
+		<dependency>
+			<groupId>org.jboss.seam.faces</groupId>
+			<artifactId>seam-faces</artifactId>
+			<version>3.0.0.Final</version>
+		</dependency>
 
-		</dependencies>
-	</dependencyManagement>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>3.6.0.Final</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>3.6.0.Final</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.faces</groupId>
+			<artifactId>jsf-api</artifactId>
+			<version>2.0.2-FCS</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>2.2.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.logging</groupId>
+			<artifactId>jboss-logging</artifactId>
+			<version>3.0.0.Beta4</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.0-801.jdbc4</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
 
 	<repositories>
 		<repository>
@@ -147,6 +179,14 @@
 	</repositories>
 
 	<build>
+		<finalName>${web-client.war.name}</finalName>
+		<resources>
+			<resource>
+				<directory>${basedir}/src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -156,6 +196,11 @@
 					<source>1.6</source>
 					<target>1.6</target>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.0.2</version>
 			</plugin>
 		</plugins>
 	</build>

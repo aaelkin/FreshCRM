@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:p="http://primefaces.prime.com.tr/ui"
+		xmlns:f="http://java.sun.com/jsf/core"
+        template="/WEB-INF/templates/empty.xhtml">
+
+	<ui:define name="content">
+		<h:link value="Создать сущность" outcome="/administration/entity/create-entity.xhtml"/>
+
+		<h:form prependId="false">
+			<p:dataTable id="entityTable" var="entity" value="#{metaEntityController.entityList}">
+				<p:column>
+					<f:facet name="header">
+						Наименование сущности
+					</f:facet>
+
+					<h:link outcome="/administration/entity/create-entity.xhtml">
+						<h:outputText value="#{entity.name}"/>
+					</h:link>
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">
+						Наименование таблицы
+					</f:facet>
+					<h:outputText value="#{entity.tableName}"/>
+				</p:column>
+			</p:dataTable>
+		</h:form>
+    </ui:define>
+</ui:composition>
