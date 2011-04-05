@@ -1,0 +1,14 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:f="http://java.sun.com/jsf/core">
+	<h:inputHidden value="#{metaEntityController.entity.id}"/>
+
+	<h:panelGrid columns="2">
+		<h:outputLabel for="entityName" value="Наименование сущности:"/>
+		<h:inputText id="entityName" value="#{metaEntityController.entity.name}"/>
+
+		<h:outputLabel for="entityTableName" value="Наименование сущности:"/>
+		<h:inputText id="entityTableName" value="#{metaEntityController.entity.tableName}"/>
+	</h:panelGrid>
+</ui:composition>

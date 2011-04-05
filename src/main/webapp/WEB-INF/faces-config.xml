@@ -15,6 +15,17 @@
 	<navigation-rule>
 		<from-view-id>/administration/entity/create-entity.xhtml</from-view-id>
 		<navigation-case>
+			<from-action>#{metaEntityController.save}</from-action>
+			<if>#{true}</if>
+			<to-view-id>/administration/entity/show-entities.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/administration/entity/edit-entity.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{metaEntityController.save}</from-action>
 			<if>#{true}</if>
 			<to-view-id>/administration/entity/show-entities.xhtml</to-view-id>
 			<redirect/>

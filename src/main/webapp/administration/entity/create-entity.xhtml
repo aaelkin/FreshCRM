@@ -7,21 +7,8 @@
 
 	<ui:define name="content">
 		<h:form>
-			<h:inputHidden value="#{metaEntityController.entity.id}"/>
-
-			<h:panelGrid columns="2">
-				<h:outputLabel for="entityName" value="Наименование сущности:"/>
-				<h:inputText id="entityName" value="#{metaEntityController.entity.name}"/>
-
-				<h:outputLabel for="entityTableName" value="Наименование сущности:"/>
-				<h:inputText id="entityTableName" value="#{metaEntityController.entity.tableName}"/>
-			</h:panelGrid>
-
-			<h:commandButton action="#{metaEntityController.save}" value="Создать"
-							 rendered="#{metaEntityController.entity.id eq null}"/>
-			<h:commandButton action="#{metaEntityController.save}" value="Сохранить"
-							 rendered="#{metaEntityController.entity.id ne null}"/>
+			<ui:include src="controlsOfEntity.xhtml"/>
+			<h:commandButton action="#{metaEntityController.save}" value="Создать"/>
 		</h:form>
-
 	</ui:define>
 </ui:composition>

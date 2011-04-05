@@ -3,20 +3,20 @@
 		xmlns="http://www.w3.org/1999/xhtml"
 		xmlns:ui="http://java.sun.com/jsf/facelets"
 		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:s="http://jboss.org/seam/faces"
 		template="/WEB-INF/templates/empty.xhtml">
 
 	<ui:define name="content">
+
+		<f:metadata>
+			<f:viewParam name="id" value="#{_id}"/>
+			<s:viewAction action="#{metaEntityController.open(_id)}"/>
+		</f:metadata>
+
 		<h:form>
-			<h:panelGrid columns="2">
-				<h:outputLabel for="entityName" value="Наименование сущности:"/>
-				<h:inputText id="entityName" value="#{metaEntityController.entity.name}"/>
-
-				<h:outputLabel for="entityTableName" value="Наименование сущности:"/>
-				<h:inputText id="entityTableName" value="#{metaEntityController.entity.tableName}"/>
-			</h:panelGrid>
-
-			<h:commandButton action="#{metaEntityController.save}" value="Создать"/>
+			<ui:include src="controlsOfEntity.xhtml"/>
+			<h:commandButton action="#{metaEntityController.save}" value="Сохранить"/>
 		</h:form>
-
 	</ui:define>
 </ui:composition>

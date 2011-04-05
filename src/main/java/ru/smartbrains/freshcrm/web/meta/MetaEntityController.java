@@ -26,6 +26,9 @@ public class MetaEntityController implements Serializable {
 	@EJB
 	private MetaInformationService metaInformationService;
 
+	public void open(Long id) {
+		this.entity = metaInformationService.getMetaEntityById(id);
+	}
 
 	public void save() {
 		metaInformationService.saveMetaEntity(entity);

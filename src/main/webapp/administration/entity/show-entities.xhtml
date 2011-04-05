@@ -17,7 +17,8 @@
 						Наименование сущности
 					</f:facet>
 
-					<h:link outcome="/administration/entity/create-entity.xhtml">
+					<h:link outcome="/administration/entity/edit-entity.xhtml">
+						<f:param name="id" value="#{entity.id}"/>
 						<h:outputText value="#{entity.name}"/>
 					</h:link>
 				</p:column>
