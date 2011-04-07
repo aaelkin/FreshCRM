@@ -1,4 +1,5 @@
 target
+.idea
 c.cmd
 *.iml
 *.ipr
